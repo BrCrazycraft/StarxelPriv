@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4srh1lvg7nl"]
+
+[ext_resource type="Script" path="res://assets/Dialogo/criar_mapa.gd" id="1_1gu71"]
+[ext_resource type="Theme" uid="uid://crdl8wkcwx2s3" path="res://resource/temas/inicio.tres" id="1_kpnrl"]
+
+[node name="GridContainer" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -87.0
+offset_right = 205.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_1gu71")
+
+[node name="Header" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 48
+columns = 2
+
+[node name="Text" type="Label" parent="Header"]
+layout_mode = 2
+theme = ExtResource("1_kpnrl")
+text = "Criar Mapa
+"
+
+[node name="Sair" type="Button" parent="Header"]
+layout_mode = 2
+theme = ExtResource("1_kpnrl")
+text = "X"
+
+[node name="Nome" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_kpnrl")
+placeholder_text = "Nome do Player..."
+alignment = 1
+language = "pt_BR"
+
+[node name="Excutar" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("1_kpnrl")
+text = "Criar"
+
+[connection signal="pressed" from="Header/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Excutar" to="." method="_on_excutar_pressed"]

@@ -1,0 +1,11 @@
+Developer
+	[Explicações e Documentação do projeto];
+
+functions
+	[Logica e Recursos do Jogo];
+
+global
+	[Scripts de Uso Global];
+
+Resource
+	[Imagem, Videos, Aúdios entre outros];

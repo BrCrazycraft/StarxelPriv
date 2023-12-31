@@ -1,3 +1,12 @@
-res://functions/cenas/ZonaDeTeste/Mapa DeTeste.tscn
+res://functions/entidades/player/player.tscn
+res://functions/entidades/player/player.gd
+res://global/ControladorSave.gd
 res://resource/temas/inicio.tres
+res://functions/cenas/ZonaDeTeste/Mapa DeTeste.tscn
+res://functions/Inventario/sistema/Slot_Inventory.gd
+res://assets/ClasseAtributos/Atributos.gd
+res://functions/cenas/ZonaDeTeste/Mapa DeTeste.gd
 res://assets/Camera/ui.tscn
+res://assets/Camera/ui.gd
+res://functions/Inventario/sistema/ItemClass.gd
+res://functions/Inventario/sistema/Inventario.gd
