@@ -7,18 +7,14 @@ static var Save: String = "NULL";
 
 #Caracteristicas de Jogo
 static var Player_Var: Dictionary = {
-	"VIDA_ATUAL" = 100,
-	"VIDA_MAXIMA" = 100,
-	"ENERGIA_ATUAL" = 200,
-	"ENERGIA_MAXIMA" = 200,
-	"DEFESA_ATUAL" = 0,
-	"DEFESA_MAXIMA" = 0,
-	"PROTECAO_ATUAL" = 0,
-	"PROTECAO_MAXIMA" = 0,
-	"VELOCIDADE_ATUAL" = 2.0,
-	"VELOCIDADE_MAXIMA" = 2.0,
-	"VELOCIDADE_ACAO_ATUAL" = 1.0,
-	"VELOCIDADE_ACAO_MAXIMA" = 1.0,
+	"PLAYER_DANO" : 10,
+	"PLAYER_CRITICO" : 1.0,
+	"PLAYER_TAXA" : 0,
+	"PLAYER_TIPO_DANO" : "NORMAL",
+	"PLAYER_VIDA" : 100,
+	"PLAYER_DEFESA" : 20,
+	"PLAYER_PROTECAO" : 20,
+	"ENERGIA" : 100,
 };
 
 #Recursos

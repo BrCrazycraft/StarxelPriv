@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemBloco" load_steps=3 format=3 uid="uid://dfr78xm6bvyn7"]
+
+[ext_resource type="Texture2D" uid="uid://b1p4sd8cqok7h" path="res://resource/texturas/inventario/BlocoItem/Terra.png" id="1_nj7nt"]
+[ext_resource type="Script" path="res://functions/inventario/sistema/ItemBloco.gd" id="2_fkodn"]
+
+[resource]
+script = ExtResource("2_fkodn")
+TEXTURA_CHAO = ExtResource("1_nj7nt")
+RESISTENCIA = 1
+TEXTURA = ExtResource("1_nj7nt")
+NOME = "Bloco de Terra"
+QUANTIDADE = 1

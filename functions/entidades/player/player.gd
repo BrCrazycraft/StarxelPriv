@@ -4,19 +4,9 @@ extends CharacterBody2D
 signal Atualizar(Energia: int, Vida: int);
 
 #Propriedades
-@export var VIDA_ATUAL : int = 0;
-@export var VIDA_MAXIMA : int = 0;
-@export var ENERGIA_ATUAL : int = 0;
-@export var ENERGIA_MAXIMA : int = 0;
-@export var DEFESA_ATUAL : int = 0;
-@export var DEFESA_MAXIMA : int = 0;
-@export var PROTECAO_ATUAL : int = 0;
-@export var PROTECAO_MAXIMA : int = 0;
-@export var VELOCIDADE_ATUAL : float = 0;
-@export var VELOCIDADE_MAXIMA : float = 0;
-
-@export var VELOCIDADE_ACAO_ATUAL : float = 1.0;
-@export var VELOCIDADE_ACAO_MAXIMA : float = 1.0;
+@export var BASE: Status = Status.new();
+@export var ENERGIA: int;
+@export var ENERGIA_MAXIMA: int;
 
 #Variaveis
 var eixo: int = 0;
@@ -24,34 +14,14 @@ var atacando: bool = false;
 
 #Recursos - Base
 func carregar_personagem() -> void:
-	VIDA_ATUAL = ControladorSave.Player_Var["VIDA_ATUAL"];
-	VIDA_MAXIMA = ControladorSave.Player_Var["VIDA_MAXIMA"];
-	ENERGIA_ATUAL = ControladorSave.Player_Var["ENERGIA_ATUAL"];
-	ENERGIA_MAXIMA = ControladorSave.Player_Var["ENERGIA_MAXIMA"];
-	DEFESA_ATUAL = ControladorSave.Player_Var["DEFESA_ATUAL"];
-	DEFESA_MAXIMA = ControladorSave.Player_Var["DEFESA_MAXIMA"];
-	PROTECAO_ATUAL = ControladorSave.Player_Var["PROTECAO_ATUAL"];
-	PROTECAO_MAXIMA = ControladorSave.Player_Var["PROTECAO_MAXIMA"];
-	VELOCIDADE_ATUAL = ControladorSave.Player_Var["VELOCIDADE_ATUAL"];
-	VELOCIDADE_MAXIMA = ControladorSave.Player_Var["VELOCIDADE_MAXIMA"];
-	VELOCIDADE_ACAO_ATUAL = ControladorSave.Player_Var["VELOCIDADE_ACAO_ATUAL"];
-	VELOCIDADE_ACAO_MAXIMA = ControladorSave.Player_Var["VELOCIDADE_ACAO_MAXIMA"];
+	BASE.carregar(ControladorSave.Player_Var);
+	ENERGIA = ControladorSave.Player_Var["ENERGIA"];
+	ENERGIA_MAXIMA = ControladorSave.Player_Var["ENERGIA"];
 
-func atualizar_personagem() -> void:
-	var Player_Var: Dictionary = {
-		"VIDA_ATUAL" = VIDA_ATUAL,
-		"VIDA_MAXIMA" = VIDA_MAXIMA,
-		"ENERGIA_ATUAL" = ENERGIA_ATUAL,
-		"ENERGIA_MAXIMA" = ENERGIA_MAXIMA,
-		"DEFESA_ATUAL" = DEFESA_ATUAL,
-		"DEFESA_MAXIMA" = DEFESA_MAXIMA,
-		"PROTECAO_ATUAL" = PROTECAO_ATUAL,
-		"PROTECAO_MAXIMA" = PROTECAO_MAXIMA,
-		"VELOCIDADE_ATUAL" = VELOCIDADE_ATUAL,
-		"VELOCIDADE_MAXIMA" = VELOCIDADE_MAXIMA,
-		"VELOCIDADE_ACAO_ATUAL" = VELOCIDADE_ACAO_ATUAL,
-		"VELOCIDADE_ACAO_MAXIMA" = VELOCIDADE_ACAO_MAXIMA,
-	};
+func atualizar_save() -> void:
+	var Player_Var: Dictionary = {};
+	Player_Var.merge(BASE.diocionario());
+	Player_Var["ENERGIA"] = ENERGIA_MAXIMA;
 	ControladorSave.Player_Var = Player_Var;
 
 
@@ -62,7 +32,7 @@ func Tempo_Ataque() -> void:
 	$Weapon/Ferramenta/Efeito.show();
 	$Weapon/Ferramenta/Efeito.play("Espada");
 	$Weapon/Ferramenta.monitoring = true;
-	await get_tree().create_timer(1.0 / VELOCIDADE_ACAO_ATUAL).timeout;
+	await get_tree().create_timer(1.0 / BASE.VELOCIDADE).timeout;
 	$Weapon/Ferramenta/Efeito.hide();
 	$Weapon/Ferramenta/Efeito.stop();
 	$Skin/Arma.show();
@@ -73,40 +43,40 @@ func Tempo_Ataque() -> void:
 #Funções
 func _ready() -> void:
 	carregar_personagem();
-	VELOCIDADE_ACAO_ATUAL = 2;
+	BASE.VELOCIDADE = 2;
 
 
 func _physics_process(delta) -> void:
 	var direcao : Vector2 = Vector2.ZERO;
 	
 	if (Input.is_action_pressed("ui_up")):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
-			direcao.y = -VELOCIDADE_ATUAL * 1.5;
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
+			direcao.y = -BASE.VELOCIDADE * 1.5;
 		else:
-			direcao.y = -VELOCIDADE_ATUAL;
+			direcao.y = -BASE.VELOCIDADE;
 		eixo = 8;
 
 	elif (Input.is_action_pressed("ui_down")):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
-			direcao.y = VELOCIDADE_ATUAL * 1.5;
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
+			direcao.y = BASE.VELOCIDADE * 1.5;
 		else:
-			direcao.y = VELOCIDADE_ATUAL;
+			direcao.y = BASE.VELOCIDADE;
 		eixo = 2;
 
 
 
 	if (Input.is_action_pressed("ui_left")):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
-			direcao.x = -VELOCIDADE_ATUAL * 1.5;
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
+			direcao.x = -BASE.VELOCIDADE * 1.5;
 		else:
-			direcao.x = -VELOCIDADE_ATUAL;
+			direcao.x = -BASE.VELOCIDADE;
 		eixo = 4;
 
 	elif (Input.is_action_pressed("ui_right")):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
-			direcao.x = VELOCIDADE_ATUAL * 1.5;
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
+			direcao.x = BASE.VELOCIDADE * 1.5;
 		else:
-			direcao.x = VELOCIDADE_ATUAL;
+			direcao.x = BASE.VELOCIDADE;
 		eixo = 6;
 
 	move_and_collide(direcao);
@@ -114,7 +84,7 @@ func _physics_process(delta) -> void:
 
 
 	if (Input.is_action_pressed("ui_up") and (Input.is_action_pressed("ui_left") == false and Input.is_action_pressed("ui_right") == false)):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
 			$Skin/Personagem.play("correndo_costa");
 			$Skin/Personagem.flip_h = false;
 		else:
@@ -124,7 +94,7 @@ func _physics_process(delta) -> void:
 		$Skin/Arma.rotation_degrees = 90;
 
 	elif (Input.is_action_pressed("ui_down") and (Input.is_action_pressed("ui_left") == false and Input.is_action_pressed("ui_right") == false)):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
 			$Skin/Personagem.play("correndo_frente");
 			$Skin/Personagem.flip_h = false;
 		else:
@@ -146,7 +116,7 @@ func _physics_process(delta) -> void:
 
 
 	if (Input.is_action_pressed("ui_left")):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
 			$Skin/Personagem.play("correndo_lado");
 			$Skin/Personagem.flip_h = false;
 		else:
@@ -156,7 +126,7 @@ func _physics_process(delta) -> void:
 		$Skin/Arma.rotation_degrees = 0;
 
 	elif (Input.is_action_pressed("ui_right")):
-		if (Input.is_action_pressed("ui_run") and ENERGIA_ATUAL > 0):
+		if (Input.is_action_pressed("ui_run") and ENERGIA > 0):
 			$Skin/Personagem.play("correndo_lado");
 			$Skin/Personagem.flip_h = true;
 		else:

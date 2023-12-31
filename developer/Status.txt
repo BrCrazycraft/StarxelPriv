@@ -1,0 +1,34 @@
+<Status>
+	<Dano>
+		-Dano Base : int
+		-Dano Maximo : int
+		-Dano Tipo : String
+		-Dano Critico : float;
+		-Taxa Maxima Critica : int;
+		> Causar Dano
+	-Velocidade de Ataque : int;
+	-Velocidade de Ataque Maxima : int;
+	-Energia Atual : int;
+	-Energia Maxima : int;
+	<HP>
+		-Vida Atual : int;
+		-Vida Maxiam : int;
+		-Defesa Atual : int;
+		-Defesa Maxima : int;
+		-Protecao Atual : int;
+		-Protecao Maxima : int;
+		-Velocidade Atual : float;
+		-Velocidade Maxima : float;
+	> Carregar(Dicionario)
+	> Dicionario() [Dicionario]
+	> Sofre Dano()
+
+[Jogador]
+	!Sofreu Dano
+	!Morreu
+	-Nome: String
+	<Status>
+	>Movimentacao()
+
+[Inimigo]
+	<Status>

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvh7ihb177kc4"]
+[gd_scene load_steps=5 format=3 uid="uid://dvh7ihb177kc4"]
 
 [ext_resource type="Script" path="res://functions/cenas/ZonaDeTeste/Mapa DeTeste.gd" id="1_1hcyu"]
-[ext_resource type="PackedScene" uid="uid://c6heb6gsjgbpr" path="res://functions/entidades/player/Player.tscn" id="1_7b0hv"]
+[ext_resource type="PackedScene" uid="uid://c6heb6gsjgbpr" path="res://functions/entidades/player/player.tscn" id="1_7b0hv"]
 [ext_resource type="Texture2D" uid="uid://ddhfpm24xqram" path="res://resource/texturas/inventario/Slots/Invatario_Slot.png" id="2_i4dhb"]
+[ext_resource type="PackedScene" uid="uid://bo24mev6q3x6d" path="res://assets/Camera/ui.tscn" id="4_1t0dh"]
 
 [node name="MapaDeTeste" type="Node2D"]
 script = ExtResource("1_1hcyu")
@@ -13,12 +14,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(488, -72)
 scale = Vector2(18.25, 12.0313)
 texture = ExtResource("2_i4dhb")
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_7b0hv")]
+[node name="Player" parent="." instance=ExtResource("1_7b0hv")]
 position = Vector2(641, 358)
+
+[node name="UI" parent="Player" instance=ExtResource("4_1t0dh")]
