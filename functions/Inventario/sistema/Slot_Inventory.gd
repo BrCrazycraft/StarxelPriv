@@ -18,7 +18,6 @@ var ITEM: ItemBase;
 func _init(Textura: CompressedTexture2D, Id: int, Max: int) -> void:
 	icon = Textura;
 	size = Textura.get_size();
-	scale = Vector2(2, 2);
 	ID = Id;
 	QUANTIDADE_MAXIAMA = Max;
 
@@ -31,7 +30,7 @@ func adicionar_vazio(Res: ItemBase) -> void:
 		ITEM = Res;
 	else:
 		ITEM == null;
-	atualizar();
+	mudar_item();
 
 
 func limpar() -> void:
@@ -39,6 +38,7 @@ func limpar() -> void:
 	NOME = "";
 	QUANTIDADE = -1;
 	ITEM = null;
+	mudar_item();
 
 
 func remover() -> ItemBase:
@@ -54,7 +54,7 @@ func remover() -> ItemBase:
 		return exit;
 	elif (ITEM is ItemFerramenta):
 		var exit: ItemFerramenta = ItemFerramenta.new();
-		exit.construtor(TEXTURA, NOME, ITEM.DANO, ITEM.DURABILIDADE, ITEM.TIPO, ITEM.EFEITO , QUANTIDADE);
+		exit.construtor(TEXTURA, NOME, ITEM.DANO, ITEM.DURABILIDADE, ITEM.DURABILIDADE_MAXIMA,ITEM.TIPO, ITEM.EFEITO , QUANTIDADE);
 		limpar();
 		return exit;
 	return null;
@@ -80,20 +80,29 @@ func e_adicionavel(Res: ItemBase) -> bool:
 
 
 func atualizar() -> void:
-	if (NOME != ""):
-		get_child(0).texture = TEXTURA;
+	if (ITEM is ItemFerramenta):
+		get_child(0).atualizar(ITEM.DURABILIDADE);
 	else:
-		get_child(0).texture = null;
+		get_child(0).atualizar(ITEM.QUANTIDADE);
+
+
+func mudar_item() -> void:
+	if (NOME != ""):
+		if (ITEM is ItemFerramenta):
+			get_child(0).criar(true, ITEM.DURABILIDADE, ITEM.DURABILIDADE_MAXIMA, TEXTURA);
+		else:
+			get_child(0).criar(false, QUANTIDADE, 0, TEXTURA);
+	else:
+		get_child(0).limpar();
 
 
 #Funções
 func _ready() -> void:
 	connect("pressed", click);
-	var Sprite = Sprite2D.new();
-	Sprite.position = Vector2(size.x / 2, size.y / 2);
+	var Sprite = preload("res://functions/inventario/sistema/ItemTexture.tscn").instantiate();
 	add_child(Sprite);
 
 
 func click() -> void:
-	if (NOME != "" and ITEM != null):
+	if (NOME != ""):
 		clicou.emit(remover(), ID);

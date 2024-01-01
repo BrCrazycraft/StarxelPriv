@@ -149,7 +149,6 @@ func _physics_process(delta) -> void:
 
 
 func _process(delta) -> void:
-	
 	if (Input.is_action_just_pressed("ui_click_left") and atacando == false):
 		Tempo_Ataque();
 	

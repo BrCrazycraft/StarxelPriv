@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvh7ihb177kc4"]
+[gd_scene load_steps=4 format=3 uid="uid://dvh7ihb177kc4"]
 
 [ext_resource type="Script" path="res://functions/cenas/ZonaDeTeste/Mapa DeTeste.gd" id="1_1hcyu"]
 [ext_resource type="PackedScene" uid="uid://c6heb6gsjgbpr" path="res://functions/entidades/player/player.tscn" id="1_7b0hv"]
-[ext_resource type="PackedScene" uid="uid://dy5a5h5dn2x6e" path="res://functions/inventario/sistema/area_inventario.tscn" id="2_btr0g"]
 [ext_resource type="Texture2D" uid="uid://ddhfpm24xqram" path="res://resource/texturas/inventario/Slots/Invatario_Slot.png" id="2_i4dhb"]
 
 [node name="MapaDeTeste" type="Node2D"]
 script = ExtResource("1_1hcyu")
 
-[node name="AreaInventario" parent="." instance=ExtResource("2_btr0g")]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(488, -72)
