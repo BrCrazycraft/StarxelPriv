@@ -1,0 +1,71 @@
+[Area de Inventario]
+
+	Layer - Inventario
+	Player - Grid Inventario
+	Selecionaveis - Inventario
+	Mochila - Inventario
+	Itens Externos - Inventario
+
+	Signal Item_Selecionado
+
+	var Selecionaveis: Inventario
+	var Mochila: Inventario
+	var Inventario_Solto
+	var Item: Item
+
+	func adicionar(:Inventario)
+	func remover() -> lista
+	func item_flutou()
+	func Abrir_Mochila
+
+
+<Inventario>
+
+	signal Item Flutou
+	signal Item Removido
+	signal Item Selecionado
+
+	var Item_Flutuante
+	var QUANTIDADE_MAXIMA;
+
+	func new(Vector2) - Constroi o invetario de acordo com o tamanho
+	func adicionar_item(Item)
+	func expandir_inventario(Quantidade)
+	func remover_item
+	func organizar
+	func logica_click
+
+
+<Slot>
+	$Sprite
+	$Informação [Label, ProgressBar]
+
+	signal clicou(Nome, Tipo, Quantidade,ID)
+	signal item_equipado(Item)
+
+	const Estilos{NORMAL, SELECIONAVEL, SAIDA}
+
+	var Textura;
+	var Nome;
+	var QUANTIDADE;
+	var QUANTIDADE_MAXIMA;
+	var Tipo [Melee ,Ranged ,Armadura ,Acessorio , Ferramenta, Bloco, Item, Consumivel];
+	var Outras_Informações[];
+	var Estilo 
+
+	func atualizar() - Troca a Skin e Adiciona Progressos
+	func adicionar_item() - Adiconar Quantidade ou Adicionar Vazio
+	func remover_item() -> Item
+	func clicou() == clicou(Nome, Tipo, Quantidade,ID);
+
+<Item>
+	@export var Textura: CompressedTexture2D
+	@export var Nome: String
+	@export var Quantidade: Int
+
+	func construtor(Textura, Nome, Quantidade);
+	
+	<Arma>
+		@export var Dano
+		@export var TipoDano
+		@export var Durabilidade

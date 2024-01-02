@@ -1,15 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704108146
+::res://::1704180805
 icon.svg::CompressedTexture2D::5805645757564963638::1704097142::1704097165::1::::<><>::
-AreaInventario.gd::GDScript::-1::1704108511::0::1::::<>Control<>::
 ::res://assets/::1704097127
 ::res://assets/Classes/::1704097126
 ::res://assets/Dialogo/::1704097142
 criar_mapa.gd::GDScript::-1::1704097142::0::1::::<>GridContainer<>::
 criar_mapa.tscn::PackedScene::131179471228437285::1704097142::0::1::::<><>::res://assets/Dialogo/criar_mapa.gd<>uid://crdl8wkcwx2s3::::res://resource/temas/inicio.tres
-::res://assets/SuporteInventario/::1704108168
-ItemFlututante.gd::GDScript::-1::1704107998::0::1::::<>Sprite2D<>::
-item_flututante.tscn::PackedScene::529647338021217944::1704108168::0::1::::<><>::res://assets/SuporteInventario/ItemFlututante.gd
+::res://assets/SuporteInventario/::1704117577
+ItemFlututante.gd::GDScript::-1::1704117525::0::1::::ItemFlutuante<>Sprite2D<>::
+item_flututante.tscn::PackedScene::529647338021217944::1704117577::0::1::::<><>::res://assets/SuporteInventario/ItemFlututante.gd
 ::res://developer/::1704097142
 Dicionario.txt::TextFile::-1::1704097142::0::1::::<><>::
 Status.txt::TextFile::-1::1704097142::0::1::::<><>::
@@ -20,25 +19,27 @@ Status.txt::TextFile::-1::1704097142::0::1::::<><>::
 MainMenu.gd::GDScript::-1::1704097142::0::1::::<>Control<>::
 MainMenu.tscn::PackedScene::9199364017352285776::1704097142::0::1::::<><>::res://functions/cenas/MenuPrincipal/MainMenu.gd<>uid://clpiq50g6s66w::::res://resource/fonts/alagard.ttf
 menu_mapas.tscn::PackedScene::4198086829630724886::1704097142::0::1::::<><>::uid://clpiq50g6s66w::::res://resource/fonts/alagard.ttf
-::res://functions/cenas/ZonaDeTeste/::1704108169
-Mapa DeTeste.gd::GDScript::-1::1704097352::0::1::::<>Node2D<>::
-Mapa DeTeste.tscn::PackedScene::8649636012309776265::1704108169::0::1::::<><>::res://functions/cenas/ZonaDeTeste/Mapa DeTeste.gd<>uid://c6heb6gsjgbpr::::res://functions/entidades/player/player.tscn<>uid://ddhfpm24xqram::::res://resource/texturas/inventario/Slots/Invatario_Slot.png
+::res://functions/cenas/ZonaDeTeste/::1704117577
+Mapa DeTeste.gd::GDScript::-1::1704117023::0::1::::<>Node2D<>::
+Mapa DeTeste.tscn::PackedScene::8649636012309776265::1704117577::0::1::::<><>::res://functions/cenas/ZonaDeTeste/Mapa DeTeste.gd<>uid://c6heb6gsjgbpr::::res://functions/entidades/player/player.tscn<>uid://dy5a5h5dn2x6e::::res://functions/inventario/sistema/area_inventario.tscn<>uid://ddhfpm24xqram::::res://resource/texturas/inventario/Slots/Invatario_Slot.png
 ::res://functions/entidades/::1704097127
-::res://functions/entidades/player/::1704097142
-player.gd::GDScript::-1::1704097142::0::1::::<>CharacterBody2D<>::
+::res://functions/entidades/player/::1704113186
+Player.gd::GDScript::-1::1704113186::0::1::::<>CharacterBody2D<>::
 player.tscn::PackedScene::6963392456531378323::1704097142::0::1::::<><>::res://functions/entidades/player/Player.gd<>uid://ddp7iw7b8hx1k::::res://resource/texturas/personagem/maculino/beta.png<>uid://bow7r0lru47yh::::res://resource/texturas/area_de_teste/Espada.png<>uid://b7sxlgnvw7np3::::res://resource/texturas/personagem/efeito/ataquePNG.png<>uid://cy4ns8xdulqdk::::res://resource/texturas/personagem/efeito/ferramenta.png
 ::res://functions/inventario/::1704097127
 ::res://functions/inventario/Blocos/::1704034466
 Terra.tres::Resource/Resource::7547303794041264082::1704034466::0::1::::<><>::uid://b1p4sd8cqok7h::::res://resource/texturas/inventario/BlocoItem/Terra.png<>res://functions/inventario/sistema/ItemBloco.gd
 ::res://functions/inventario/Itens/::1704034419
-::res://functions/inventario/sistema/::1704108169
-Inventario.gd::GDScript::-1::1704097142::0::1::::Inventario<>GridContainer<>::
+::res://functions/inventario/sistema/::1704117578
+AreaInventario.gd::GDScript::-1::1704117550::0::1::::<>Control<>::
+area_inventario.tscn::PackedScene::8905779618993371526::1704117578::0::1::::<><>::res://functions/inventario/sistema/AreaInventario.gd
+Inventario.gd::GDScript::-1::1704117240::0::1::::Inventario<>GridContainer<>::
 ItemBloco.gd::GDScript::-1::1704097142::0::1::::ItemBloco<>ItemBase<>::
 ItemClass.gd::GDScript::-1::1704097142::0::1::::ItemBase<>Resource<>::
 ItemFerramenta.gd::GDScript::-1::1704101477::0::1::::ItemFerramenta<>ItemBase<>::
 ItemTexture.gd::GDScript::-1::1704101591::0::1::::<>TextureRect<>::
-ItemTexture.tscn::PackedScene::9014052835309074826::1704108169::0::1::::<><>::res://functions/inventario/sistema/ItemTexture.gd
-Slot_Inventory.gd::GDScript::-1::1704102017::0::1::::Slot<>Button<>::
+ItemTexture.tscn::PackedScene::9014052835309074826::1704117577::0::1::::<><>::res://functions/inventario/sistema/ItemTexture.gd
+Slot_Inventory.gd::GDScript::-1::1704117057::0::1::::Slot<>Button<>::
 ::res://functions/teste/::1703938062
 ::res://global/::1704097142
 ControladorSave.gd::GDScript::-1::1704097142::0::1::::ControladorSave<>RefCounted<>::

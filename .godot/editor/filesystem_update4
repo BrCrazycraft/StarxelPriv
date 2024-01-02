@@ -1,9 +1,2 @@
-res://functions/cenas/ZonaDeTeste/Mapa DeTeste.tscn
-res://assets/SuporteInventario/item_flututante.tscn
-res://functions/inventario/sistema/ItemTexture.tscn
-res://functions/inventario/sistema/AreaInventario.gd
-res://functions/cenas/ZonaDeTeste/Mapa DeTeste.gd
-res://functions/inventario/sistema/Inventario.gd
-res://functions/inventario/sistema/Slot_Inventory.gd
-res://assets/SuporteInventario/ItemFlututante.gd
 res://functions/inventario/sistema/area_inventario.tscn
+res://developer/Inventario.txt
