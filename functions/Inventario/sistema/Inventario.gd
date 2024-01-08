@@ -2,37 +2,46 @@ class_name Inventario;
 extends GridContainer;
 
 #Sinais
-signal itemflutar(Item: ItemBase);
+signal ItemFlutuantou(item: Item);
+
 
 #Propriedades
-var rows: int;
-var QUANTIDADE: int;
-var ITEM_FLUTUANTE: ItemBase;
-
-func _init(Size: Vector2, Max: int) -> void:
-	columns = Size.x;
-	rows = Size.y;
-	size = Vector2((columns * 64), (rows * 64));
-	QUANTIDADE = Max;
+@export var TEXTURA: CompressedTexture2D;
+@export var QUANTIDADE_MAXIMA : int;
+@export var ITEM: Item;
 
 
-func adicionar_item(Item: ItemBase, Id: int) -> void:
-	var node = get_child(Id);
-	if (node != null and node is Slot):
-		node.adicionar_vazio(Item);
+#Recursos
+func _init(Textura: CompressedTexture2D, Max: int, Tamanho: Vector2) -> void:
+	TEXTURA = Textura;
+	QUANTIDADE_MAXIMA = Max;
+	size = Vector2(Tamanho.x * 40, Tamanho.y * 40);
+	columns = Tamanho.x;
+
+	var Id: int = 0;
+	for x in Tamanho.x:
+		for y in Tamanho.y:
+			var slot: Slot = Slot.new(preload("res://resource/texturas/inventario/Slots/Invatario_Slot.png"), Id, QUANTIDADE_MAXIMA);
+			Id += 1;
+			add_child(slot);
+			slot.connect("clicou", clicou);
+			if ((Id % 2) == 0):
+				slot.adicionar_item(preload("res://functions/inventario/Materials/TerraCoada.tres"));
+
+
+func atualizar_maximo(Quantidade: int) -> void:
+	QUANTIDADE_MAXIMA = Quantidade;
+	for x in get_child_count():
+		get_child(x).QUANTIDADE_MAXIMA = QUANTIDADE_MAXIMA;
 
 
 #Funções
-func _ready() -> void:
-	var id: int = 0;
-	for y in range(rows):
-		for x in range(columns):
-			var slot = Slot.new(preload("res://resource/texturas/inventario/Slots/Invatario_Slot.png"), id, QUANTIDADE);
-			add_child(slot);
-			slot.connect("clicou", clicou);
-			id += 1;
-
-
-func clicou(item: ItemBase, id: int) -> void:
-	ITEM_FLUTUANTE = item;
-	itemflutar.emit(item);
+func clicou(Itm: Item, Id: int) -> void:
+	var this: Slot = get_child(Id);
+	if (ITEM != null and this.adicionavel(ITEM)):
+		this.adicionar_item(ITEM);
+		ITEM = null;
+		ItemFlutuantou.emit(ITEM);
+	elif (ITEM == null and this.eVazio() == false):
+		ITEM = this.remover_item();
+		ItemFlutuantou.emit(ITEM);

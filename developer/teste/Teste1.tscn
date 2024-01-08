@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnly2wj27b1yy"]
+
+[ext_resource type="Script" path="res://developer/teste/Teste1.gd" id="1_so4jy"]
+[ext_resource type="Script" path="res://functions/inventario/sistema/PlayerInventario.gd" id="2_r5v2x"]
+
+[node name="Teste1" type="Node2D"]
+script = ExtResource("1_so4jy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerInventario" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_r5v2x")

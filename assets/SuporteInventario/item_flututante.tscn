@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://hsthjx4c2dum"]
-
-[ext_resource type="Script" path="res://assets/SuporteInventario/ItemFlututante.gd" id="1_maxfg"]
-
-[node name="ItemFlututante" type="Sprite2D"]
-script = ExtResource("1_maxfg")

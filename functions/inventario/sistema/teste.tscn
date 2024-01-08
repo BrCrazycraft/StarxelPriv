@@ -1,0 +1,344 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk86dqucb6di3"]
+
+[ext_resource type="Script" path="res://functions/inventario/sistema/Slot.gd" id="2_k7y5l"]
+[ext_resource type="Texture2D" uid="uid://ddhfpm24xqram" path="res://resource/texturas/inventario/Slots/Invatario_Slot.png" id="2_ugp4q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -152.0
+offset_right = 196.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+columns = 8
+
+[node name="Slot10" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot2" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot9" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot8" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot7" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot6" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot4" type="Button" parent="GridContainer/Menu"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Mochila" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+columns = 9
+
+[node name="Slot10" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot2" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot9" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot8" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot7" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot6" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot4" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot11" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot3" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot5" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot12" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot13" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot14" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot15" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot16" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot17" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot18" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot19" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot20" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot21" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot22" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot23" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot24" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot25" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot26" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot27" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot28" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot29" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot30" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot31" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot32" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot33" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot34" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot35" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot36" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot37" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot38" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot39" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot40" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot41" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot42" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot43" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot44" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot45" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot46" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot47" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot48" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot50" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot49" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot51" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot52" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot53" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
+
+[node name="Slot54" type="Button" parent="GridContainer/Mochila"]
+layout_mode = 2
+icon = ExtResource("2_ugp4q")
+script = ExtResource("2_k7y5l")
