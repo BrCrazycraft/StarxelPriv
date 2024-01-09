@@ -32,9 +32,10 @@ func criar_area_de_atalho() -> void:
 	Mochila = bag;
 
 
-func adicionar_inventario(Inv: Inventario) -> void:
-	Inv.connect("ItemFlutuantou", itemFlutuantou);
-	get_child(1).add_child(Inv);
+func adicionar_inventario(Inv: GridContainer) -> void:
+	if (Inv is InventarioBau):
+		Inv.connect("ItemFlutuantou", itemFlutuantou);
+		get_child(1).add_child(Inv);
 
 
 func remover_inventario() -> void:
@@ -45,8 +46,9 @@ func itemFlutuantou(Itm: Item) -> void:
 	Navegação.ITEM = Itm;
 	Mochila.ITEM = Itm;
 	for x in range(get_child(1).get_child_count()):
-		var node: Inventario = get_child(0).get_child(x);
-		if (node is Inventario):
+		var node = get_child(1).get_child(x);
+		print(node is InventarioBau);
+		if (node is Inventario or node is InventarioBau):
 			node.ITEM = Itm;
 	
 	if (Itm != null):

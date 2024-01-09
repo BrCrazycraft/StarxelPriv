@@ -17,14 +17,7 @@ static var Player_Var: Dictionary = {
 	"ENERGIA" : 100,
 };
 
-#Recursos
-
-
-
-
-
 #Funções
-
 static func pegar_saves() -> Array:
 	var files = DirAccess.open(CAMINHO + "/" + PASTA);
 	return files.get_directories();
@@ -32,6 +25,8 @@ static func pegar_saves() -> Array:
 
 static func criar_saves(Nome: String) -> bool:
 	if (DirAccess.dir_exists_absolute(CAMINHO + "/" + PASTA + "/" + Nome) == true) : return false;
+	
+	Save = Nome;
 	
 	var mundo = DirAccess.open(CAMINHO);
 	mundo.make_dir(PASTA);
@@ -43,3 +38,7 @@ static func criar_saves(Nome: String) -> bool:
 	var player = CAMINHO + "/" + PASTA + "/" + Nome + "/Personagem";
 
 	return true;
+
+
+static func Carregar_Teste() -> void:
+	SaveBau.CAMINHO = CAMINHO + "/" + PASTA + "/" + "Teste" + "/Mundo/";

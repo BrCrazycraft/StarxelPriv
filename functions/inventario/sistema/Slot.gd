@@ -84,6 +84,14 @@ func remover_item() -> Item:
 	return null;
 
 
+func pegar_item() -> Item:
+	if (ITEM != null and (QUANTIDADE != -1 or DURABILIDADE != -1)):
+		if (eItem(ITEM)):
+			var exit: ItemMaterial = ItemMaterial.new();
+			exit.novo(ITEM.TEXTURA, ITEM.NOME, ITEM.TIPO, QUANTIDADE);
+			return exit;
+	return null;
+
 
 func atualizar() -> void:
 	if (get_child(1) != null):

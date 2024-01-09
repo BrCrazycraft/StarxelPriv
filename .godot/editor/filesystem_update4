@@ -1,5 +1,9 @@
-res://developer/teste/Teste1.tscn
-res://functions/inventario/Materials/TerraCoada.tres
-res://functions/inventario/sistema/PlayerInventario.gd
 res://functions/inventario/sistema/teste.tscn
-res://functions/inventario/sistema/Inventario.gd
+res://functions/inventario/Materials/TerraCoada.tres
+res://functions/inventario/sistema/Bau.gd
+res://global/ControladorSave.gd
+res://functions/inventario/sistema/Slot.gd
+res://developer/teste/Teste1.tscn
+res://functions/inventario/sistema/PlayerInventario.gd
+res://developer/teste/Teste1.gd
+res://global/Saves/SaveBau.gd
