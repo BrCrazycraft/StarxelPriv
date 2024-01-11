@@ -40,7 +40,7 @@ func salvar() -> void:
 	for x in get_child_count():
 		var this: Slot = get_child(x);
 		if (this.eVazio() == false):
-			inv[x] = get_child(x).pegar_item();
+			inv[x] = get_child(x).pegar_item().encode();
 	
 	SaveBau.Bau_Var[TICKET] = inv;
 	SaveBau.salvar_bau();
@@ -50,9 +50,11 @@ func salvar() -> void:
 func carregar() -> void:
 	var Dicionario: Dictionary = SaveBau.carregar_bau(TICKET);
 	var Chaves: Array = Dicionario.keys();
-	print(Dicionario[Chaves[0]])
+	
 	for x in Chaves.size():
-		get_child(Chaves[x]).adicionar_item(Dicionario[Chaves[x]]);
+		var Itm: Item = Item.pegar_ID(Dicionario[Chaves[x]]["ID"]);
+		Itm.decode(Dicionario[Chaves[x]]);
+		get_child(Chaves[x]).adicionar_item(Itm);
 
 
 func adicionar_força(Id: int, Itm: Item) -> void:
@@ -74,4 +76,5 @@ func clicou(Itm: Item, Id: int):
 
 func _process(delta) -> void:
 	if (Input.is_action_just_pressed("key_inventario")):
+		salvar();
 		queue_free();

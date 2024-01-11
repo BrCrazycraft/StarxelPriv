@@ -1,8 +1,9 @@
 class_name ControladorSave;
 
 #Variaveis
-const CAMINHO : String = "user://";
-const PASTA : String = "Save";
+const CAMINHO : String = "user://Save/";
+static var PathMundo : String;
+static var PathPlayer : String;
 static var Save: String = "NULL";
 
 #Caracteristicas de Jogo
@@ -19,26 +20,28 @@ static var Player_Var: Dictionary = {
 
 #Funções
 static func pegar_saves() -> Array:
-	var files = DirAccess.open(CAMINHO + "/" + PASTA);
+	var files = DirAccess.open(CAMINHO);
 	return files.get_directories();
 
 
 static func criar_saves(Nome: String) -> bool:
-	if (DirAccess.dir_exists_absolute(CAMINHO + "/" + PASTA + "/" + Nome) == true) : return false;
+	if (DirAccess.dir_exists_absolute(CAMINHO + Nome) == true) : return false;
 	
 	Save = Nome;
 	
-	var mundo = DirAccess.open(CAMINHO);
-	mundo.make_dir(PASTA);
-	mundo.make_dir(PASTA + "/" + Nome);
-	mundo.make_dir(PASTA + "/" + Nome + "/Mundo");
-	mundo.make_dir(PASTA + "/" + Nome + "/Personagem");
+	var mundo = DirAccess.open("user://");
+	mundo.make_dir("Save/");
+	mundo.make_dir(CAMINHO + Nome);
+	Save = CAMINHO + Nome + "/";
+	mundo.make_dir(CAMINHO + Nome + "/Mundo");
+	mundo.make_dir(CAMINHO + Nome + "/Personagem");
 	
-	var mapas = CAMINHO + "/" + PASTA + "/" + Nome + "/Mundo";
-	var player = CAMINHO + "/" + PASTA + "/" + Nome + "/Personagem";
+	var mapas = CAMINHO + Nome + "/Mundo";
+	var player = CAMINHO + Nome + "/Personagem";
 
 	return true;
 
 
 static func Carregar_Teste() -> void:
-	SaveBau.CAMINHO = CAMINHO + "/" + PASTA + "/" + "Teste" + "/Mundo/";
+	PathMundo = CAMINHO + "Teste" + "/Mundo/";
+	PathPlayer = CAMINHO + "Teste" + "/Mundo/";

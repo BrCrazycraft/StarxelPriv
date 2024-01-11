@@ -1,7 +1,8 @@
-GridContainer
 Item
+Area2D
+Node
+GridContainer
 Resource
-DanoRecurso
 Button
 ItemBase
 RefCounted

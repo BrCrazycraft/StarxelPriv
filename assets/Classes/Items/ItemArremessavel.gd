@@ -1,34 +1,39 @@
-class_name ItemBloco;
+class_name ItemArremessavel;
 extends Item;
 
+#Propriedades
 @export var QUANTIDADE: int;
-@export var CAMINHO: String;
+@export var EFEITO: String;
+@export var VALOR: int;
 
-
-func novo(Textura: CompressedTexture2D, Nome: String, Tipo: String, Quantidade: int, Caminho: String) -> void:
+#Recursos
+func novo(Textura: CompressedTexture2D, Nome: String, Tipo: String, Quantidade: int, Efeito: String, Valor: int) -> void:
 	TEXTURA = Textura;
 	NOME = Nome;
 	TIPO = Tipo;
 	QUANTIDADE = Quantidade;
-	CAMINHO = Caminho;
+	EFEITO = Efeito;
+	VALOR = Valor;
 
 
 func encode() -> Dictionary:
 	var exit: Dictionary = {
-		"ID": "ItemBloco",
+		"ID": "ItemArremessavel",
 		"Textura": TEXTURA.resource_path,
 		"Nome": NOME,
 		"Tipo": TIPO,
 		"Quantidade": QUANTIDADE,
-		"Caminho": CAMINHO
+		"Efeito": EFEITO,
+		"Valor": VALOR
 	};
 	return exit;
 
 
 func decode(Dicionario: Dictionary) -> void:
-	if (Dicionario["ID"] != null and Dicionario["ID"] == "ItemBloco"):
+	if (Dicionario["ID"] != null and Dicionario["ID"] == "ItemArremessavel"):
 		TEXTURA = load(Dicionario["Textura"]);
 		NOME = Dicionario["Nome"];
 		TIPO = Dicionario["Tipo"];
 		QUANTIDADE = Dicionario["Quantidade"];
-		CAMINHO = Dicionario["Caminho"];
+		EFEITO = Dicionario["Efeito"];
+		VALOR = Dicionario["Valor"];
