@@ -1,3 +1,4 @@
+ItemArma
 ItemMaterial
 ItemBloco
 ItemFerramenta

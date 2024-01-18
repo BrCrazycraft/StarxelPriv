@@ -1,3 +1,6 @@
+res://functions/blocos/Sistema
+res://functions/inventario/Armas
+res://resource/texturas/personagem/maculino
 res://resource/texturas/personagem/efeito
 res://assets/Classes/Status
 res://functions/inventario/sistema
@@ -6,7 +9,6 @@ C:/Users/user/Documents/Projects/StarxelPriv/developer
 res://functions/Inventario/sistema
 res://
 C:/Users/user/Documents/Projects/Starxel Definitive/developer/gravação
-res://resource/texturas/personagem/maculino
 res://functions/cenas/MenuPrincipal
 res://assets/Dialogo
 res://resource/fonts

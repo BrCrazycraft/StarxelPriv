@@ -70,3 +70,11 @@
 		@export var DanoAtual
 		@export var TipoDano
 		@export var Durabilidade
+
+
+
+>> Classes <<
+	Clicou(Slot, Flutuante)
+	Clicou, se for vazio e tiver Item = e tiver Item ele equipa
+	Retorna o Item antigo e o novo
+	Clicou, se tiver Item e for vazio = ele desequipa

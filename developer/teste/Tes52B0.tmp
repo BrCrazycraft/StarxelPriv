@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnly2wj27b1yy"]
+
+[ext_resource type="Script" path="res://developer/teste/Teste1.gd" id="1_so4jy"]
+[ext_resource type="PackedScene" uid="uid://t3lyrleevaoo" path="res://functions/entidades/jogador/jogador.tscn" id="2_5jupv"]
+[ext_resource type="Script" path="res://functions/inventario/sistema/PlayerInventario.gd" id="2_r5v2x"]
+[ext_resource type="Texture2D" uid="uid://cy4ns8xdulqdk" path="res://resource/texturas/personagem/efeito/ferramenta.png" id="4_j62b0"]
+[ext_resource type="Script" path="res://functions/blocos/Sistema/ItemDropado.gd" id="5_hgmry"]
+[ext_resource type="Resource" uid="uid://tvmujk1pic43" path="res://functions/inventario/Materials/TerraCoada.tres" id="6_dicux"]
+
+[node name="Teste1" type="Node2D"]
+script = ExtResource("1_so4jy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerInventario" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_r5v2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(230, 91)
+texture = ExtResource("4_j62b0")
+
+[node name="Jogador" parent="." instance=ExtResource("2_5jupv")]
+position = Vector2(627, 321)
+Velocidade = 2
+
+[node name="ItemDropado" type="Area2D" parent="."]
+script = ExtResource("5_hgmry")
+ITEM = ExtResource("6_dicux")
+
+[connection signal="coletou" from="Jogador" to="." method="_on_jogador_coletou"]
+[connection signal="tocado" from="ItemDropado" to="." method="_on_item_dropado_tocado"]

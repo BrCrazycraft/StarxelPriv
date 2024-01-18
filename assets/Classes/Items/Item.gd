@@ -30,6 +30,10 @@ func decode(Dicionario: Dictionary) -> void:
 		TIPO = Dicionario["Tipo"];
 
 
+func pegar_Tipo() -> String:
+	return "Item";
+
+
 static func pegar_ID(ID: String) -> Item:
 	if (ID == "Item"):
 		return Item.new();
@@ -51,6 +55,5 @@ static func pegar_ID(ID: String) -> Item:
 		return ItemFerramenta.new();
 	elif (ID == "ItemArremessavel"):
 		return ItemArremessavel.new();
-
 	print_debug("Item[pegar_ID(", ID, ")]: ID invalido");
 	return null;

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3udy2i17e2jl"]
+
+[ext_resource type="Script" path="res://functions/blocos/Sistema/Teste.gd" id="1_cmwl8"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cmwl8")

@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://ijkrtrk0ym68"]
+[gd_scene load_steps=13 format=3 uid="uid://ijkrtrk0ym68"]
 
-[ext_resource type="Script" path="res://assets/Classes/Status/Mao.gd" id="1_hjqfq"]
+[ext_resource type="Script" path="res://functions/entidades/jogador/Mao.gd" id="1_hjqfq"]
 [ext_resource type="Texture2D" uid="uid://cy4ns8xdulqdk" path="res://resource/texturas/personagem/efeito/ferramenta.png" id="2_bqem7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dby4u"]
-size = Vector2(64, 32)
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dmkm"]
+size = Vector2(48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2b0hx"]
 atlas = ExtResource("2_bqem7")
@@ -72,16 +75,22 @@ animations = [{
 script = ExtResource("1_hjqfq")
 
 [node name="Collision2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_dby4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-32, 0)
+scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(32, 0)
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(56, 0)
+shape = SubResource("RectangleShape2D_5dmkm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox"]
+position = Vector2(48, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_eis4a")
-animation = &"Ferramenta"
-frame = 3
-frame_progress = 0.0894198
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="animation_looped" from="HitBox/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

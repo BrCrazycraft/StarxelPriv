@@ -29,3 +29,7 @@ func decode(Dicionario: Dictionary) -> void:
 		NOME = Dicionario["Nome"];
 		TIPO = Dicionario["Tipo"];
 		QUANTIDADE = Dicionario["Quantidade"];
+
+
+func pegar_Tipo() -> String:
+	return "ItemMaterial";

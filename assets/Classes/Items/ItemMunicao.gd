@@ -46,3 +46,7 @@ func decode(Dicionario: Dictionary) -> void:
 		EFEITO = Dicionario["Efeito"];
 		VALOR = Dicionario["Valor"];
 		DANO = Dicionario["Dano"];
+
+
+func pegar_Tipo() -> String:
+	return "ItemMunicao";

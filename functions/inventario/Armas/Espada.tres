@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemArma" load_steps=3 format=3 uid="uid://tva0sqnnybt"]
+
+[ext_resource type="Texture2D" uid="uid://bow7r0lru47yh" path="res://resource/texturas/area_de_teste/Espada.png" id="1_8ssyc"]
+[ext_resource type="Script" path="res://assets/Classes/Items/ItemArma.gd" id="2_awvdr"]
+
+[resource]
+script = ExtResource("2_awvdr")
+DANO = 15
+EFEITO = "Metal"
+VALOR = 5
+ALCANCE = 0.0
+CUSTO = "\"0\""
+TEXTURA = ExtResource("1_8ssyc")
+NOME = "Espada Dev"
+TIPO = "Arma"

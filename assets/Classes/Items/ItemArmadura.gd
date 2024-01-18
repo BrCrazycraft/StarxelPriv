@@ -31,3 +31,7 @@ func decode(Dicionario: Dictionary) -> void:
 		TIPO = Dicionario["Tipo"];
 		DEFESA = Dicionario["Defesa"];
 		ESTILO = Dicionario["Estilo"];
+
+
+func pegar_Tipo() -> String:
+	return "ItemArmadura";

@@ -32,3 +32,7 @@ func decode(Dicionario: Dictionary) -> void:
 		TIPO = Dicionario["Tipo"];
 		QUANTIDADE = Dicionario["Quantidade"];
 		CAMINHO = Dicionario["Caminho"];
+
+
+func pegar_Tipo() -> String:
+	return "ItemBloco";

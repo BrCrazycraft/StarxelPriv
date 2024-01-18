@@ -38,3 +38,7 @@ func decode(Dicionario: Dictionary) -> void:
 		PROPRIEDADE = Dicionario["Propriedade"];
 		DURABILIDADE = Dicionario["Durabilidade"];
 		FORCA = Dicionario["Forca"];
+
+
+func pegar_Tipo() -> String:
+	return "ItemFerramenta";

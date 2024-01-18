@@ -3,6 +3,7 @@ extends GridContainer;
 
 #Sinais
 signal ItemFlutuantou(item: Item);
+signal ItemEquipado(item: Item, antigo: Item);
 
 
 #Propriedades
@@ -34,6 +35,12 @@ func atualizar_maximo(Quantidade: int) -> void:
 	for x in get_child_count():
 		get_child(x).QUANTIDADE_MAXIMA = QUANTIDADE_MAXIMA;
 
+
+func temEspaco(Itm: Item) -> Array:
+	for x in get_child_count():
+		if (get_child(x).adicionavel(Itm)):
+			return [true, x];
+	return [false];
 
 #Funções
 func clicou(Itm: Item, Id: int) -> void:
